@@ -1,10 +1,8 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
+import { listUsers } from "../controllers/user.controller";
 
 const router = Router();
 
-router.get('/', (req: Request, res: Response): void => {
-  const users = ['John', 'Doe', 'Wick'];
-  res.status(200).send(users);
-});
+router.get('/', listUsers);
 
-export { router };
+export default router;
